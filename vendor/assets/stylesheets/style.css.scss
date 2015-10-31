@@ -1,4 +1,5 @@
 
+
 @media (min-width: 768px) { 
 .navbar-header {
     float: left !important;
@@ -11,6 +12,17 @@
 body
 {
 	 overflow-x: hidden;
+	 
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1da36+0,fefcea+100 */
+background: #f1da36; /* Old browsers */
+background: -moz-linear-gradient(top,  #f1da36 0%, #fefcea 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1da36), color-stop(100%,#fefcea)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f1da36 0%,#fefcea 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f1da36 0%,#fefcea 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f1da36 0%,#fefcea 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #f1da36 0%,#fefcea 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1da36', endColorstr='#fefcea',GradientType=0 ); /* IE6-9 */
+
 }
 .navbar-brand {float:none !important;}
  }

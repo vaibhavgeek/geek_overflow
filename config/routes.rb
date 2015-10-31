@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+ resource :geo_ip_request, controller: :home
+
   root 'home#index'
   get 'home/index'
 

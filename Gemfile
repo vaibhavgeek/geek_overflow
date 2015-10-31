@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'twitter-bootstrap-rails' 
+gem 'twitter-bootstrap-rails'
+gem "font-awesome-rails"
+gem 'geoip', '~> 1.4.0'
 
 gem 'coffee-script-source', '1.8.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
