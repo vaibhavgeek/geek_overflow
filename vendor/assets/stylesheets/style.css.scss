@@ -1,0 +1,13 @@
+
+@media (min-width: @768) { 
+.navbar-header {
+    float: left !important;
+    padding: 15px !important;
+    text-align: center !important;
+    width: 100% !important;
+    position: absolute;
+}
+
+.navbar-brand {float:none !important;}
+ }
+
