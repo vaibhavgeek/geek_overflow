@@ -2,12 +2,16 @@
 @media (min-width: 768px) { 
 .navbar-header {
     float: left !important;
-    padding: 15px !important;
+    padding-top: 15px !important;
     text-align: center !important;
     width: 100% !important;
     position: absolute;
 }
 
+body
+{
+	 overflow-x: hidden;
+}
 .navbar-brand {float:none !important;}
  }
 
