@@ -1,0 +1,2 @@
+module HelpfeedHelper
+end
