@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <script type="text/javascript">
+$(".nav a").on("click", function(){
+   $(".nav").find(".active").removeClass("active");
+   $(this).parent().addClass("active");
+});
+  </script>
 
         <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid">
@@ -25,14 +31,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Recent Searches</a></li>
-            <li><%=lnk_to home_help_path , "Help Me!" %></li>
-             <li><%=lnk_to home_women_path , "Women Emergency Helpline" %></li>
+            <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to  "Recent Searches" , root_path  %></li>
+            <li class="<%= 'active' if current_page?(home_help_path) %>"><%= link_to "Help Me!" , home_help_path   %></li>
+             <li class="<%= 'active' if current_page?(home_women_path) %>"><%= link_to  "Women Emergency Helpline" , home_women_path %></li>
 
         </ul>
          <ul class="nav navbar-nav navbar-right">
-                     <li><a href="#">Show me nearby Hospitals</a></li>
-					 <li><a href="#">Nearby Train and Bus Stops</a></li>                     
+                     <li class="<%= 'active' if current_page?(home_hospital_path) %>"><%= link_to "Show me nearby Hospitals" , home_hospital_path  %></li>
+					 <li class="<%= 'active' if current_page?(home_stations_path) %>"><%= link_to  "Nearby Train and Bus Stops" , home_stations_path %></li>                     
          </ul>
 
                     </div><!-- /.navbar-collapse -->

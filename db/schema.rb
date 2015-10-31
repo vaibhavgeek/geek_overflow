@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151031151943) do
+ActiveRecord::Schema.define(version: 20151031151944) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "search_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20151031151943) do
     t.string   "search_query"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "search_count"
   end
 
 end

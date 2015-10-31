@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'home/index'
-
+  put 'home/new_search'
   get 'home/help'
   get 'home/women'
   get 'home/hospital'
