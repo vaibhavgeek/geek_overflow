@@ -55,6 +55,7 @@ GEM
       httparty (>= 0.9.0)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
+    geocoder (1.2.12)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     httparty (0.13.7)
@@ -164,6 +165,7 @@ DEPENDENCIES
   coffee-script-source (= 1.8.0)
   exotel
   font-awesome-rails
+  geocoder
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.1)
