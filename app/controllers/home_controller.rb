@@ -32,13 +32,8 @@ def hospital
 	@status = []
 	hospitals_json = RestClient.get 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=21.1700,72.8300&rankby=distance&types=hospital&key=AIzaSyBUK3jJ6Yh8MB3_2imJUBqAI8Dk8L5Zbds', {:accept => :json}
 	parsed_json = ActiveSupport::JSON.decode(hospitals_json)
-	datas = parsed_json["results"]
-	datas.each do |item|
-		@name << item['name']
-		@location << item['vicinity']
-		ka = item['opening_hours']
-		@status << item['opening_hours']
-	end
+	@datas = parsed_json["results"]
+	
 	#@data = datas[1]['name']
 	#@hospitals_json = RestClient.get 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&rankby=distance&types=hospital&key=AIzaSyBUK3jJ6Yh8MB3_2imJUBqAI8Dk8L5Zbds', {:content_type => :json, :accept => :json}
 	#result = JSON.parse(open("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&rankby=distance&types=hospital&key=AIzaSyBUK3jJ6Yh8MB3_2imJUBqAI8Dk8L5Zbds").read)
