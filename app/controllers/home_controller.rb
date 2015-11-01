@@ -2,7 +2,7 @@ class HomeController < ApplicationController
      before_filter :application_code
 
  def index
- 	response = Exotel::Sms.send(:from => '9512535646', :to => '9512535646', :body => 'TU beer hain')
+response = Exotel::Call.connect_to_agent(:to => '080-395-11986', :from => '9512535646', :caller_id => '8583035546', :call_type => 'trans')
 
  	  @projects = Search.search(params[:search])
  	  if @projects.count == 0
