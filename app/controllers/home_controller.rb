@@ -46,11 +46,8 @@ def stations
 	@location = []
 	station_json = RestClient.get 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=21.1700,72.8300&rankby=distance&types=bus_station&key=AIzaSyBUK3jJ6Yh8MB3_2imJUBqAI8Dk8L5Zbds', {:accept => :json}
 	parsed_json = ActiveSupport::JSON.decode(station_json)
-	datas = parsed_json["results"]
-	datas.each do |item|
-		@name << item['name']
-		@location << item['vicinity']
-	end
+	@datas = parsed_json["results"]
+	
 	#@geocoder = Geocoder.search(@response["lat"].to_s + " , " + @response["lat"].to_s)
 end
 

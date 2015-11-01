@@ -1,22 +1,21 @@
 
+<!--<%= @data %>-->
 
-
-
-<div class="col-md-4">
+<div class="col-md-11">
 
 <div class="panel panel-default">
-	<h4>Names</h4>
-    <div class="panel-body">
-		<%= @name.join('<br />').html_safe %>
-	</div>
+	<center><h3>Names of nearest bus stops</h3></center>
+	<table class="table">
+
+    <% @datas.each do |item| %>
+		 <tr>
+
+			<td><%= item['name'] %></td>
+		<td><%= item['vicinity'] %></td>
+		
+		</tr>
+	<%end%>
+</table>
 </div>
 </div>
-<div class="col-md-8">
-	
-<div class="panel panel-default">
-	<h4>Location</h4>
-    <div class="panel-body">
-		<%= @location.join('<br />').html_safe %>
-	</div>
-</div>
-</div>
+
