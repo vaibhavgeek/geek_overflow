@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
   put 'home/new_search'
-  get 'home/help'
+  resources :helpfeed  
   get 'home/women'
   get 'home/hospital'
   get 'home/stations'

@@ -32,7 +32,7 @@ $(".nav a").on("click", function(){
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
           <ul class="nav navbar-nav">
             <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to  "Recent Searches" , root_path  %></li>
-            <li class="<%= 'active' if current_page?(home_help_path) %>"><%= link_to "Help Me!" , home_help_path   %></li>
+            <li class="<%= 'active' if current_page?(helpfeed_index_path) %>"><%= link_to "Help Me!" , helpfeed_index_path   %></li>
              <li class="<%= 'active' if current_page?(home_women_path) %>"><%= link_to  "Women Emergency Helpline" , home_women_path %></li>
 
         </ul>
