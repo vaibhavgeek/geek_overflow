@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
      before_filter :application_code
+require 'open-uri'
+require 'json'
 
 def index
  	  @projects = Search.search(params[:search])
@@ -25,11 +27,36 @@ def emergency
 end
 
 def hospital
-	@hospitals_json = RestClient.get 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&rankby=distance&types=hospital&key=AIzaSyBUK3jJ6Yh8MB3_2imJUBqAI8Dk8L5Zbds', {:accept => :json}
+	@name = []
+	@location = []
+	@status = []
+	hospitals_json = RestClient.get 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=21.1700,72.8300&rankby=distance&types=hospital&key=AIzaSyBUK3jJ6Yh8MB3_2imJUBqAI8Dk8L5Zbds', {:accept => :json}
+	parsed_json = ActiveSupport::JSON.decode(hospitals_json)
+	datas = parsed_json["results"]
+	datas.each do |item|
+		@name << item['name']
+		@location << item['vicinity']
+		ka = item['opening_hours']
+		@status << item['opening_hours']
+	end
+	#@data = datas[1]['name']
+	#@hospitals_json = RestClient.get 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&rankby=distance&types=hospital&key=AIzaSyBUK3jJ6Yh8MB3_2imJUBqAI8Dk8L5Zbds', {:content_type => :json, :accept => :json}
+	#result = JSON.parse(open("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&rankby=distance&types=hospital&key=AIzaSyBUK3jJ6Yh8MB3_2imJUBqAI8Dk8L5Zbds").read)
+	#@hospitals_json = JSON.parse(open("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&rankby=distance&types=hospital&key=AIzaSyBUK3jJ6Yh8MB3_2imJUBqAI8Dk8L5Zbds").read)
+	#@hospitals_json = JSON('https://voguepay.com/?v_transaction_id=demo-1345109950&type=json').body
 end
 
 def stations
-	@geocoder = Geocoder.search(@response["lat"].to_s + " , " + @response["lat"].to_s)
+	@name = []
+	@location = []
+	station_json = RestClient.get 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=21.1700,72.8300&rankby=distance&types=bus_station&key=AIzaSyBUK3jJ6Yh8MB3_2imJUBqAI8Dk8L5Zbds', {:accept => :json}
+	parsed_json = ActiveSupport::JSON.decode(station_json)
+	datas = parsed_json["results"]
+	datas.each do |item|
+		@name << item['name']
+		@location << item['vicinity']
+	end
+	#@geocoder = Geocoder.search(@response["lat"].to_s + " , " + @response["lat"].to_s)
 end
 
 def ngo

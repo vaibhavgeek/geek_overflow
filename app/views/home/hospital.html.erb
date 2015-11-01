@@ -1,1 +1,29 @@
-<%= @hospitals_json %>
+
+<!--<%= @data %>-->
+<div class="col-md-3">
+
+<div class="panel panel-default">
+	<h4>Names</h4>
+    <div class="panel-body">
+		<%= @name.join('<br />').html_safe %>
+	</div>
+</div>
+</div>
+<div class="col-md-2">
+
+<div class="panel panel-default">
+	<h4>Open/Close</h4>
+    <div class="panel-body">
+		<%= @status.join('<br />').html_safe %>
+	</div>
+</div>
+</div>
+<div class="col-md-7">
+	
+<div class="panel panel-default">
+	<h4>Location</h4>
+    <div class="panel-body">
+		<%= @location.join('<br />').html_safe %>
+	</div>
+</div>
+</div>
