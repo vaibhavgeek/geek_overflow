@@ -23,8 +23,7 @@ $('ul.nav-pills li a').click(function (e) {
       
       <ul class="nav nav-pills nav-stacked">
         <% @searches.each do |s| %>
-
-                <li role="presentation"><%= link_to s.search_query , home_results_path(s.search_query) , :remote => 'true' %></li>
+        <li role="presentation"><%= link_to s.search_query, seach_res_path("surat") , :remote => 'true' %></li>
 
         <% end %> 
        

@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
      before_filter :application_code
 
- def index
+def index
  	  @projects = Search.search(params[:search])
  	  if @projects.count == 0
  	  	if params[:search] != nil && params[:search] != ""
@@ -10,14 +10,13 @@ class HomeController < ApplicationController
  	  end
  	  @searches = Search.all
 
- end 
+end 
 def results
-  
-  	
+ 	
   	my_search_client = Google::APIClient.new
 	google_search = my_search_client.discovered_api('customsearch')
 	@responsegoogle = my_search_client.execute(
- 	 google_search.cse.list, 'q' => ' params[:search_list]'
+ 	 google_search.cse.list, 'q' =>  params[:search_list].to_s
 )
   
 end
