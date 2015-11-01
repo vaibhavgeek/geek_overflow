@@ -9,8 +9,18 @@ class HomeController < ApplicationController
  	    end
  	  end
  	  @searches = Search.all
- end 
 
+ end 
+def results
+  
+  	
+  	my_search_client = Google::APIClient.new
+	google_search = my_search_client.discovered_api('customsearch')
+	@responsegoogle = my_search_client.execute(
+ 	 google_search.cse.list, 'q' => ' params[:search_list]'
+)
+  
+end
 def emergency
 	response = Exotel::Call.connect_to_agent(:to => '08039511986', :from => '9512535646', :caller_id => '08039511986', :call_type => 'trans')
 end

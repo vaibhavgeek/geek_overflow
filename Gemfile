@@ -6,6 +6,7 @@ gem  'exotel'
 gem 'google_places'
 gem 'geocoder'
 gem "rest-client"
+gem 'google-api-client'
 gem 'coffee-script-source', '1.8.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'home/women'
   get 'home/hospital'
   get 'home/stations'
-
+  get 'home/results/:search_list'
   post 'home/emergency'
   post 'home/ngo'
   # The priority is based upon order of creation: first created -> highest priority.

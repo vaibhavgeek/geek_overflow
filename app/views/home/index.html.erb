@@ -1,3 +1,9 @@
+<script type="text/javascript">
+$('ul.nav-pills li a').click(function (e) {
+  $('ul.nav-pills li.active').removeClass('active')
+  $(this).parent('li').addClass('active')
+})
+</script>
 <div class="row" style="padding-right:15px; padding-left:15px">
 
 <div class="col-md-3">
@@ -18,7 +24,7 @@
       <ul class="nav nav-pills nav-stacked">
         <% @searches.each do |s| %>
 
-                <li role="presentation"><a href="#"><%= s.search_query %></a></li>
+                <li role="presentation"><%= link_to s.search_query , home_results_path(s.search_query) , :remote => 'true' %></li>
 
         <% end %> 
        
@@ -33,7 +39,7 @@
   <div class="col-md-9">
 
   <div class="panel panel-default">
-    <div class="panel-body">
+    <div class="panel-body" id="search_results">
 
     </div>
  
